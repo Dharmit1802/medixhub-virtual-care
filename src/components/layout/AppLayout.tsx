@@ -21,8 +21,8 @@ export function AppLayout({
       
       <main className={cn(
         "flex-1 transition-all duration-300",
-        "p-4 md:p-6 lg:p-8",
-        isMobile ? "ml-0" : "md:ml-64",
+        "p-4 md:p-6 lg:p-8"
+        // Removed the ml-0 and md:ml-64 classes that were causing extra spacing
       )}>
         <div className="max-w-7xl mx-auto animate-fade-in">
           {children}
