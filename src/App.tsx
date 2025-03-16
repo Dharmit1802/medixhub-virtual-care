@@ -10,6 +10,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 const Index = lazy(() => import("./pages/Index"));
 const Login = lazy(() => import("./pages/Login"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
+const Appointments = lazy(() => import("./pages/Appointments"));
+const Patients = lazy(() => import("./pages/Patients"));
+const Records = lazy(() => import("./pages/Records"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Loading component for suspense fallback
@@ -36,6 +39,9 @@ const App = () => (
             <Route path="/doctor" element={<Dashboard userRole="doctor" />} />
             <Route path="/patient" element={<Dashboard userRole="patient" />} />
             <Route path="/staff" element={<Dashboard userRole="staff" />} />
+            <Route path="/appointments" element={<Appointments />} />
+            <Route path="/patients" element={<Patients />} />
+            <Route path="/records" element={<Records />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

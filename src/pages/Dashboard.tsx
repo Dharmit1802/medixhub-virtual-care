@@ -1,4 +1,3 @@
-
 import { AppLayout } from "@/components/layout/AppLayout";
 import { StatsCard } from "@/components/dashboard/StatsCard";
 import { AppointmentsList } from "@/components/dashboard/AppointmentsList";
@@ -14,6 +13,7 @@ import {
   Activity
 } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
 
 interface DashboardProps {
   userRole?: 'admin' | 'doctor' | 'patient' | 'staff';
@@ -91,7 +91,6 @@ export default function Dashboard({ userRole = 'admin' }: DashboardProps) {
     setAppointments(sampleAppointments);
   }, []);
   
-  // Conditional rendering based on user role
   const renderAdminDashboard = () => (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -125,31 +124,37 @@ export default function Dashboard({ userRole = 'admin' }: DashboardProps) {
         />
       </div>
       
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
-        <div className="lg:col-span-2 space-y-6">
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6">
-            <DoctorSchedule />
-          </div>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4">
+        <div className="lg:col-span-2 space-y-4">
+          <Card className="bg-white dark:bg-gray-800">
+            <CardContent className="p-4">
+              <DoctorSchedule />
+            </CardContent>
+          </Card>
           
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6">
-            <h3 className="text-lg font-semibold tracking-tight mb-4">Department Performance</h3>
-            <div className="h-64 flex items-center justify-center bg-gray-50 dark:bg-gray-900 rounded-lg">
-              <FileBarChart className="h-12 w-12 text-gray-300" />
-              <span className="ml-2 text-muted-foreground">Chart Placeholder</span>
-            </div>
-          </div>
+          <Card className="bg-white dark:bg-gray-800">
+            <CardContent className="p-4">
+              <h3 className="text-lg font-semibold tracking-tight mb-4">Department Performance</h3>
+              <div className="h-64 flex items-center justify-center bg-gray-50 dark:bg-gray-900 rounded-lg">
+                <FileBarChart className="h-12 w-12 text-gray-300" />
+                <span className="ml-2 text-muted-foreground">Chart Placeholder</span>
+              </div>
+            </CardContent>
+          </Card>
         </div>
         
-        <div className="space-y-6">
+        <div className="space-y-4">
           <EmergencyStatus />
           
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6">
-            <AppointmentsList 
-              appointments={appointments} 
-              title="Today's Appointments"
-              limit={3}
-            />
-          </div>
+          <Card className="bg-white dark:bg-gray-800">
+            <CardContent className="p-4">
+              <AppointmentsList 
+                appointments={appointments} 
+                title="Today's Appointments"
+                limit={3}
+              />
+            </CardContent>
+          </Card>
         </div>
       </div>
     </>
@@ -322,7 +327,7 @@ export default function Dashboard({ userRole = 'admin' }: DashboardProps) {
   
   return (
     <AppLayout userRole={userRole}>
-      <div className="space-y-6">
+      <div className="space-y-4">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">{roleTitle[userRole]}</h1>
           <p className="text-muted-foreground mt-1">
