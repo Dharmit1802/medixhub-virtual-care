@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import * as SheetPrimitive from "@radix-ui/react-dialog";
 import { cva } from "class-variance-authority";
 import { X } from "lucide-react";
@@ -13,23 +12,6 @@ const SheetTrigger = SheetPrimitive.Trigger;
 const SheetClose = SheetPrimitive.Close;
 
 const SheetPortal = SheetPrimitive.Portal;
-=======
-
-import * as SheetPrimitive from "@radix-ui/react-dialog"
-import { cva } from "class-variance-authority"
-import { X } from "lucide-react"
-import * as React from "react"
-
-import { cn } from "@/lib/utils"
-
-const Sheet = SheetPrimitive.Root
-
-const SheetTrigger = SheetPrimitive.Trigger
-
-const SheetClose = SheetPrimitive.Close
-
-const SheetPortal = SheetPrimitive.Portal
->>>>>>> dd38a7670f9c4a00b4d8198a8149c810d50cc9ab
 
 const SheetOverlay = React.forwardRef(({ className, ...props }, ref) => (
   <SheetPrimitive.Overlay
@@ -40,13 +22,8 @@ const SheetOverlay = React.forwardRef(({ className, ...props }, ref) => (
     {...props}
     ref={ref}
   />
-<<<<<<< HEAD
 ));
 SheetOverlay.displayName = SheetPrimitive.Overlay.displayName;
-=======
-))
-SheetOverlay.displayName = SheetPrimitive.Overlay.displayName
->>>>>>> dd38a7670f9c4a00b4d8198a8149c810d50cc9ab
 
 const sheetVariants = cva(
   "fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
@@ -65,11 +42,7 @@ const sheetVariants = cva(
       side: "right",
     },
   }
-<<<<<<< HEAD
 );
-=======
-)
->>>>>>> dd38a7670f9c4a00b4d8198a8149c810d50cc9ab
 
 const SheetContent = React.forwardRef(
   ({ side = "right", className, children, ...props }, ref) => (
@@ -88,20 +61,10 @@ const SheetContent = React.forwardRef(
       </SheetPrimitive.Content>
     </SheetPortal>
   )
-<<<<<<< HEAD
 );
 SheetContent.displayName = SheetPrimitive.Content.displayName;
 
 const SheetHeader = ({ className, ...props }) => (
-=======
-)
-SheetContent.displayName = SheetPrimitive.Content.displayName
-
-const SheetHeader = ({
-  className,
-  ...props
-}) => (
->>>>>>> dd38a7670f9c4a00b4d8198a8149c810d50cc9ab
   <div
     className={cn(
       "flex flex-col space-y-2 text-center sm:text-left",
@@ -109,20 +72,10 @@ const SheetHeader = ({
     )}
     {...props}
   />
-<<<<<<< HEAD
 );
 SheetHeader.displayName = "SheetHeader";
 
 const SheetFooter = ({ className, ...props }) => (
-=======
-)
-SheetHeader.displayName = "SheetHeader"
-
-const SheetFooter = ({
-  className,
-  ...props
-}) => (
->>>>>>> dd38a7670f9c4a00b4d8198a8149c810d50cc9ab
   <div
     className={cn(
       "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
@@ -130,13 +83,8 @@ const SheetFooter = ({
     )}
     {...props}
   />
-<<<<<<< HEAD
 );
 SheetFooter.displayName = "SheetFooter";
-=======
-)
-SheetFooter.displayName = "SheetFooter"
->>>>>>> dd38a7670f9c4a00b4d8198a8149c810d50cc9ab
 
 const SheetTitle = React.forwardRef(({ className, ...props }, ref) => (
   <SheetPrimitive.Title
@@ -144,13 +92,8 @@ const SheetTitle = React.forwardRef(({ className, ...props }, ref) => (
     className={cn("text-lg font-semibold text-foreground", className)}
     {...props}
   />
-<<<<<<< HEAD
 ));
 SheetTitle.displayName = SheetPrimitive.Title.displayName;
-=======
-))
-SheetTitle.displayName = SheetPrimitive.Title.displayName
->>>>>>> dd38a7670f9c4a00b4d8198a8149c810d50cc9ab
 
 const SheetDescription = React.forwardRef(({ className, ...props }, ref) => (
   <SheetPrimitive.Description
@@ -158,7 +101,6 @@ const SheetDescription = React.forwardRef(({ className, ...props }, ref) => (
     className={cn("text-sm text-muted-foreground", className)}
     {...props}
   />
-<<<<<<< HEAD
 ));
 SheetDescription.displayName = SheetPrimitive.Description.displayName;
 
@@ -174,12 +116,3 @@ export {
   SheetTitle,
   SheetTrigger,
 };
-=======
-))
-SheetDescription.displayName = SheetPrimitive.Description.displayName
-
-export {
-  Sheet, SheetClose,
-  SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetOverlay, SheetPortal, SheetTitle, SheetTrigger
-}
->>>>>>> dd38a7670f9c4a00b4d8198a8149c810d50cc9ab
