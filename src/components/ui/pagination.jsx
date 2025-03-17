@@ -1,8 +1,17 @@
+<<<<<<< HEAD
 import * as React from "react";
 import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+=======
+
+import * as React from "react"
+import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+import { buttonVariants } from "@/components/ui/button"
+>>>>>>> dd38a7670f9c4a00b4d8198a8149c810d50cc9ab
 
 const Pagination = ({ className, ...props }) => (
   <nav
@@ -11,8 +20,13 @@ const Pagination = ({ className, ...props }) => (
     className={cn("mx-auto flex w-full justify-center", className)}
     {...props}
   />
+<<<<<<< HEAD
 );
 Pagination.displayName = "Pagination";
+=======
+)
+Pagination.displayName = "Pagination"
+>>>>>>> dd38a7670f9c4a00b4d8198a8149c810d50cc9ab
 
 const PaginationContent = React.forwardRef(({ className, ...props }, ref) => (
   <ul
@@ -20,6 +34,7 @@ const PaginationContent = React.forwardRef(({ className, ...props }, ref) => (
     className={cn("flex flex-row items-center gap-1", className)}
     {...props}
   />
+<<<<<<< HEAD
 ));
 PaginationContent.displayName = "PaginationContent";
 
@@ -29,6 +44,22 @@ const PaginationItem = React.forwardRef(({ className, ...props }, ref) => (
 PaginationItem.displayName = "PaginationItem";
 
 const PaginationLink = ({ className, isActive, size = "icon", ...props }) => (
+=======
+))
+PaginationContent.displayName = "PaginationContent"
+
+const PaginationItem = React.forwardRef(({ className, ...props }, ref) => (
+  <li ref={ref} className={cn("", className)} {...props} />
+))
+PaginationItem.displayName = "PaginationItem"
+
+const PaginationLink = ({
+  className,
+  isActive,
+  size = "icon",
+  ...props
+}) => (
+>>>>>>> dd38a7670f9c4a00b4d8198a8149c810d50cc9ab
   <a
     aria-current={isActive ? "page" : undefined}
     className={cn(
@@ -40,10 +71,20 @@ const PaginationLink = ({ className, isActive, size = "icon", ...props }) => (
     )}
     {...props}
   />
+<<<<<<< HEAD
 );
 PaginationLink.displayName = "PaginationLink";
 
 const PaginationPrevious = ({ className, ...props }) => (
+=======
+)
+PaginationLink.displayName = "PaginationLink"
+
+const PaginationPrevious = ({
+  className,
+  ...props
+}) => (
+>>>>>>> dd38a7670f9c4a00b4d8198a8149c810d50cc9ab
   <PaginationLink
     aria-label="Go to previous page"
     size="default"
@@ -53,10 +94,20 @@ const PaginationPrevious = ({ className, ...props }) => (
     <ChevronLeft className="h-4 w-4" />
     <span>Previous</span>
   </PaginationLink>
+<<<<<<< HEAD
 );
 PaginationPrevious.displayName = "PaginationPrevious";
 
 const PaginationNext = ({ className, ...props }) => (
+=======
+)
+PaginationPrevious.displayName = "PaginationPrevious"
+
+const PaginationNext = ({
+  className,
+  ...props
+}) => (
+>>>>>>> dd38a7670f9c4a00b4d8198a8149c810d50cc9ab
   <PaginationLink
     aria-label="Go to next page"
     size="default"
@@ -66,10 +117,20 @@ const PaginationNext = ({ className, ...props }) => (
     <span>Next</span>
     <ChevronRight className="h-4 w-4" />
   </PaginationLink>
+<<<<<<< HEAD
 );
 PaginationNext.displayName = "PaginationNext";
 
 const PaginationEllipsis = ({ className, ...props }) => (
+=======
+)
+PaginationNext.displayName = "PaginationNext"
+
+const PaginationEllipsis = ({
+  className,
+  ...props
+}) => (
+>>>>>>> dd38a7670f9c4a00b4d8198a8149c810d50cc9ab
   <span
     aria-hidden
     className={cn("flex h-9 w-9 items-center justify-center", className)}
@@ -78,8 +139,13 @@ const PaginationEllipsis = ({ className, ...props }) => (
     <MoreHorizontal className="h-4 w-4" />
     <span className="sr-only">More pages</span>
   </span>
+<<<<<<< HEAD
 );
 PaginationEllipsis.displayName = "PaginationEllipsis";
+=======
+)
+PaginationEllipsis.displayName = "PaginationEllipsis"
+>>>>>>> dd38a7670f9c4a00b4d8198a8149c810d50cc9ab
 
 export {
   Pagination,
@@ -89,4 +155,8 @@ export {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
+<<<<<<< HEAD
 };
+=======
+}
+>>>>>>> dd38a7670f9c4a00b4d8198a8149c810d50cc9ab
