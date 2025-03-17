@@ -103,6 +103,14 @@ export default function Index() {
           <Button variant="default" className="md:hidden" onClick={handleLogin}>
             Login
           </Button>
+
+          <Button
+            variant="default"
+            className="md:hidden"
+            onClick={() => navigate("/dashboard")}
+          >
+            dashboard
+          </Button>
         </nav>
 
         {/* Hero Content */}
