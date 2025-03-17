@@ -1,4 +1,3 @@
-
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { cva } from "class-variance-authority";
@@ -40,42 +39,61 @@ export function StatsCard({
     >
       <div className="flex items-start justify-between">
         <div>
-          <p className={cn(
-            "text-sm font-medium",
-            variant === "colored" ? "text-white/90" : "text-muted-foreground"
-          )}>
+          <p
+            className={cn(
+              "text-sm font-medium",
+              variant === "colored" ? "text-white/90" : "text-muted-foreground"
+            )}
+          >
             {title}
           </p>
-          <h3 className="mt-2 text-2xl font-bold tracking-tight">
-            {value}
-          </h3>
+          <h3 className="mt-2 text-2xl font-bold tracking-tight">{value}</h3>
           {description && (
-            <p className={cn(
-              "mt-1 text-xs",
-              variant === "colored" ? "text-white/80" : "text-muted-foreground"
-            )}>
+            <p
+              className={cn(
+                "mt-1 text-xs",
+                variant === "colored"
+                  ? "text-white/80"
+                  : "text-muted-foreground"
+              )}
+            >
               {description}
             </p>
           )}
           {trend && (
-            <p className={cn(
-              "mt-2 text-xs font-medium flex items-center gap-1",
-              trend.positive ? "text-success" : "text-danger",
-              variant === "colored" && (trend.positive ? "text-white" : "text-white")
-            )}>
+            <p
+              className={cn(
+                "mt-2 text-xs font-medium flex items-center gap-1",
+                trend.positive ? "text-success" : "text-danger",
+                variant === "colored" &&
+                  (trend.positive ? "text-white" : "text-white")
+              )}
+            >
               {trend.positive ? "↑" : "↓"} {Math.abs(trend.value)}%
-              <span className={variant === "colored" ? "text-white/70" : "text-muted-foreground"}>vs last month</span>
+              <span
+                className={
+                  variant === "colored"
+                    ? "text-white/70"
+                    : "text-muted-foreground"
+                }
+              >
+                vs last month
+              </span>
             </p>
           )}
         </div>
-        <div className={cn(
-          "rounded-lg p-2",
-          variant === "colored" ? "bg-white/20" : "bg-medical-100 dark:bg-medical-900/30"
-        )}>
+        <div
+          className={cn(
+            "rounded-lg p-2",
+            variant === "colored"
+              ? "bg-white/20"
+              : "bg-medical-100 dark:bg-medical-900/30"
+          )}
+        >
           {icon}
         </div>
       </div>
-      
+
       {/* Decorative elements */}
       {variant === "colored" && (
         <>

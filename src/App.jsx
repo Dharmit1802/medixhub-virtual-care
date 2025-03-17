@@ -1,10 +1,11 @@
-
 import { Suspense, lazy } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Chat from "./pages/Chat";
+import AIAnalysis from "./pages/AiAnalysis";
 
 // Lazy load pages for better performance
 const Index = lazy(() => import("./pages/Index"));
@@ -47,6 +48,8 @@ const App = () => (
             <Route path="/records" element={<Records />} />
             <Route path="/emergency" element={<Emergency />} />
             <Route path="/billing" element={<Billing />} />
+            <Route path="/chat" element={<Chat />} />
+            <Route path="/ai-analysis" element={<AIAnalysis />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

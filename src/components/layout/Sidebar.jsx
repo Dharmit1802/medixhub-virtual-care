@@ -1,13 +1,12 @@
-
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { 
-  Calendar, 
-  Home, 
-  UserCog, 
-  Users, 
-  MessageSquare, 
-  CreditCard, 
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import {
+  Calendar,
+  Home,
+  UserCog,
+  Users,
+  MessageSquare,
+  CreditCard,
   Layers,
   Activity,
   LogOut,
@@ -17,13 +16,13 @@ import {
   UserRound,
   Stethoscope,
   Ambulance,
-  Bot
-} from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
-import { useIsMobile } from '@/hooks/use-mobile';
+  Bot,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { useIsMobile } from "@/hooks/use-mobile";
 
-export function Sidebar({ userRole = 'admin' }) {
+export function Sidebar({ userRole = "admin" }) {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const isMobile = useIsMobile();
@@ -31,7 +30,7 @@ export function Sidebar({ userRole = 'admin' }) {
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
-  
+
   const closeSidebar = () => {
     if (isMobile) {
       setIsOpen(false);
@@ -42,121 +41,121 @@ export function Sidebar({ userRole = 'admin' }) {
   const getMenuItems = () => {
     const commonItems = [
       {
-        name: 'Dashboard',
+        name: "Dashboard",
         icon: <Home className="h-5 w-5" />,
-        path: '/',
+        path: "/",
       },
       {
-        name: 'Log Out',
+        name: "Log Out",
         icon: <LogOut className="h-5 w-5" />,
-        path: '/login',
-        className: 'mt-auto',
+        path: "/login",
+        className: "mt-auto",
       },
     ];
 
-    switch(userRole) {
-      case 'admin':
+    switch (userRole) {
+      case "admin":
         return [
           ...commonItems.slice(0, 1),
           {
-            name: 'Staff Management',
+            name: "Staff Management",
             icon: <UserCog className="h-5 w-5" />,
-            path: '/staff',
+            path: "/staff",
           },
           {
-            name: 'Appointments',
+            name: "Appointments",
             icon: <Calendar className="h-5 w-5" />,
-            path: '/appointments',
+            path: "/appointments",
           },
           {
-            name: 'Emergency Room',
+            name: "Emergency Room",
             icon: <Ambulance className="h-5 w-5" />,
-            path: '/emergency',
+            path: "/emergency",
           },
           {
-            name: 'Billing',
+            name: "Billing",
             icon: <CreditCard className="h-5 w-5" />,
-            path: '/billing',
+            path: "/billing",
           },
           {
-            name: 'AI Analysis',
+            name: "AI Analysis",
             icon: <Layers className="h-5 w-5" />,
-            path: '/ai-analysis',
+            path: "/ai-analysis",
           },
           commonItems[1],
         ];
-      case 'doctor':
+      case "doctor":
         return [
           ...commonItems.slice(0, 1),
           {
-            name: 'My Appointments',
+            name: "My Appointments",
             icon: <Calendar className="h-5 w-5" />,
-            path: '/appointments',
+            path: "/appointments",
           },
           {
-            name: 'Patients',
+            name: "Patients",
             icon: <Users className="h-5 w-5" />,
-            path: '/patients',
+            path: "/patients",
           },
           {
-            name: 'Medical Records',
+            name: "Medical Records",
             icon: <Activity className="h-5 w-5" />,
-            path: '/records',
+            path: "/records",
           },
           {
-            name: 'Chat',
+            name: "Chat",
             icon: <MessageSquare className="h-5 w-5" />,
-            path: '/chat',
+            path: "/chat",
           },
           commonItems[1],
         ];
-      case 'patient':
+      case "patient":
         return [
           ...commonItems.slice(0, 1),
           {
-            name: 'My Appointments',
+            name: "My Appointments",
             icon: <Calendar className="h-5 w-5" />,
-            path: '/appointments',
+            path: "/appointments",
           },
           {
-            name: 'My Records',
+            name: "My Records",
             icon: <Activity className="h-5 w-5" />,
-            path: '/records',
+            path: "/records",
           },
           {
-            name: 'Chat with Doctor',
+            name: "Chat with Doctor",
             icon: <MessageSquare className="h-5 w-5" />,
-            path: '/chat',
+            path: "/chat",
           },
           {
-            name: 'Billing',
+            name: "Billing",
             icon: <CreditCard className="h-5 w-5" />,
-            path: '/billing',
+            path: "/billing",
           },
           commonItems[1],
         ];
-      case 'staff':
+      case "staff":
         return [
           ...commonItems.slice(0, 1),
           {
-            name: 'My Schedule',
+            name: "My Schedule",
             icon: <Calendar className="h-5 w-5" />,
-            path: '/schedule',
+            path: "/schedule",
           },
           {
-            name: 'Appointments',
+            name: "Appointments",
             icon: <Calendar className="h-5 w-5" />,
-            path: '/appointments',
+            path: "/appointments",
           },
           {
-            name: 'Emergency Room',
+            name: "Emergency Room",
             icon: <Ambulance className="h-5 w-5" />,
-            path: '/emergency',
+            path: "/emergency",
           },
           {
-            name: 'Patients',
+            name: "Patients",
             icon: <Users className="h-5 w-5" />,
-            path: '/patients',
+            path: "/patients",
           },
           commonItems[1],
         ];
@@ -171,9 +170,9 @@ export function Sidebar({ userRole = 'admin' }) {
     <>
       {/* Mobile menu toggle */}
       <div className="fixed top-4 left-4 z-50 md:hidden">
-        <Button 
-          variant="ghost" 
-          size="icon" 
+        <Button
+          variant="ghost"
+          size="icon"
           onClick={toggleSidebar}
           className="bg-white/70 dark:bg-gray-900/70 backdrop-blur-md shadow-md rounded-full h-10 w-10"
         >
@@ -183,14 +182,14 @@ export function Sidebar({ userRole = 'admin' }) {
 
       {/* Sidebar backdrop for mobile */}
       {isOpen && isMobile && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
           onClick={closeSidebar}
         />
       )}
-      
+
       {/* Sidebar */}
-      <aside 
+      <aside
         className={cn(
           "fixed top-0 left-0 z-40 h-full w-64 transition-transform duration-300 ease-in-out transform",
           "bg-sidebar border-r border-border shadow-lg md:shadow-none",
@@ -202,11 +201,13 @@ export function Sidebar({ userRole = 'admin' }) {
         {/* Logo */}
         <div className="p-6 border-b border-border">
           <div className="flex items-center gap-2 text-medical-500 font-bold text-xl">
-            {userRole === 'admin' && <UserRoundCog className="h-6 w-6" />}
-            {userRole === 'doctor' && <Stethoscope className="h-6 w-6" />}
-            {userRole === 'patient' && <UserRound className="h-6 w-6" />}
-            {userRole === 'staff' && <UserRoundCog className="h-6 w-6" />}
-            <span>Medix<span className="text-medical-700">CARE</span></span>
+            {userRole === "admin" && <UserRoundCog className="h-6 w-6" />}
+            {userRole === "doctor" && <Stethoscope className="h-6 w-6" />}
+            {userRole === "patient" && <UserRound className="h-6 w-6" />}
+            {userRole === "staff" && <UserRoundCog className="h-6 w-6" />}
+            <span>
+              Medix<span className="text-medical-700">CARE</span>
+            </span>
           </div>
         </div>
 
@@ -232,19 +233,23 @@ export function Sidebar({ userRole = 'admin' }) {
             ))}
           </ul>
         </nav>
-        
+
         {/* User Profile */}
         <div className="p-4 border-t border-border">
           <div className="flex items-center gap-3">
             <div className="h-10 w-10 rounded-full bg-medical-100 flex items-center justify-center text-medical-500">
-              {userRole === 'admin' && <UserRoundCog className="h-5 w-5" />}
-              {userRole === 'doctor' && <Stethoscope className="h-5 w-5" />}
-              {userRole === 'patient' && <UserRound className="h-5 w-5" />}
-              {userRole === 'staff' && <UserRoundCog className="h-5 w-5" />}
+              {userRole === "admin" && <UserRoundCog className="h-5 w-5" />}
+              {userRole === "doctor" && <Stethoscope className="h-5 w-5" />}
+              {userRole === "patient" && <UserRound className="h-5 w-5" />}
+              {userRole === "staff" && <UserRoundCog className="h-5 w-5" />}
             </div>
             <div>
-              <p className="text-sm font-medium">{userRole === 'doctor' ? 'Dr. John Doe' : 'John Doe'}</p>
-              <p className="text-xs text-muted-foreground capitalize">{userRole}</p>
+              <p className="text-sm font-medium">
+                {userRole === "doctor" ? "Dr. John Doe" : "John Doe"}
+              </p>
+              <p className="text-xs text-muted-foreground capitalize">
+                {userRole}
+              </p>
             </div>
           </div>
         </div>
