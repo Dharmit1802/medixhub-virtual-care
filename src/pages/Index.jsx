@@ -104,11 +104,7 @@ export default function Index() {
             Login
           </Button>
 
-          <Button
-            variant="default"
-            className="md:hidden"
-            onClick={() => navigate("/dashboard")}
-          >
+          <Button variant="default" onClick={() => navigate("/dashboard")}>
             dashboard
           </Button>
         </nav>
